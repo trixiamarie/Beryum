@@ -8,7 +8,7 @@
         <div class="px-3 flex">
             <div>
                 <!-- Name and link styling -->
-                <a href="#" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">
+                <a href="#" class="block mt-1 text-lg leading-tight font-medium text-white hover:underline">
                     {{ optional($request->fromUser)->name }} {{ optional($request->fromUser)->lastname }}
                 </a>
                 <a>&#64;{{ optional($request->fromUser)->username }}</a>

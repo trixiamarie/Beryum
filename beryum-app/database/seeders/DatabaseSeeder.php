@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
         $this->call(PostsSeeder::class); 
         $this->call(IngredientsSeeder::class);
         $this->call(RecipesIngredientsSeeder::class);
+        $this->call(ThemeSeeder::class);
 
         // User::factory(10)->create();
 

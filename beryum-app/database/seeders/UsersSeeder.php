@@ -70,11 +70,11 @@ class UsersSeeder extends Seeder
             'username' => 'lolapina',
             'lastname' => 'Garcia',
             'city' => 'Milano',
-            'dateofbirth' => Carbon::createFromFormat('d/m/Y', '28/12/1969')->format('Y-m-d'),
+            'dateofbirth' => Carbon::createFromFormat('d/m/Y', '21/04/1934')->format('Y-m-d'),
             'email' => 'lolapina@example.com',
             'password' => Hash::make('password'), 
             'role_id' => 2,
-            'avatar'=> 'images/mamaeden.jpg',
+            'avatar'=> 'images/lolapina.jpg',
         ]);
 
        

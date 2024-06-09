@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Friend;
+use App\Models\Theme;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
@@ -12,6 +13,8 @@ $users = User::whereNotIn('id', $friendIds)
     ->where('id', '!=', $userId)
     ->take(5)
     ->get();
+$colors = Theme::all();
+
 ?>
 
 <!DOCTYPE html>
@@ -41,6 +44,9 @@ $users = User::whereNotIn('id', $friendIds)
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
+    <script>
+        
+    </script>
     <style>
         .sidebar {
             position: fixed;
@@ -84,18 +90,21 @@ $users = User::whereNotIn('id', $friendIds)
 
         }
 
-        .bgtrans{
+        .bgtrans {
             background-color: #ea7b0c9c;
-            
+
         }
-        .bgtrans2{
+
+        .bgtrans2 {
             background-color: #EA580C;
         }
 
         body {
             margin-left: 452px;
             margin-right: 452px;
-            background-color: #EA580C;
+           
+            /*background-color: #EA580C;*/
+             background-color: #ff9036; 
 
         }
 
@@ -158,18 +167,20 @@ $users = User::whereNotIn('id', $friendIds)
         }
 
         @keyframes bounce {
-        0%, 100% {
-            transform: translateY(0);
-        }
-        50% {
-            transform: translateY(-10px);
-        }
-    }
 
-    .animated-arrow {
-        animation: bounce 1s infinite;
-    }
+            0%,
+            100% {
+                transform: translateY(0);
+            }
 
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .animated-arrow {
+            animation: bounce 1s infinite;
+        }
     </style>
 </head>
 
@@ -184,7 +195,7 @@ $users = User::whereNotIn('id', $friendIds)
         <div class="sidebar shadow">
             <div class="content py-6 px-4 sm:px-6 lg:px-8">
 
-                <div class="bgtrans shadow-sm rounded-lg px-6 py-3">
+                <div class="bg-orange-400 shadow-sm rounded-lg px-6 py-3">
                     @auth
                     <ul class="divide-y divide-gray-200">
                         <!-- Home -->
@@ -295,7 +306,7 @@ $users = User::whereNotIn('id', $friendIds)
 
                     </ul>
                     @else
-                    <div class="container">
+                    <div class="container text-white">
                         <div style="height:60vh;" class="flex justify-content-center align-items-center">
                             <div class="text-center">
                                 <p class="text-center fw-bold pb-3" style="font-weight: 700;font-size: 2rem;">Welcome to Beryum!</p>
@@ -305,12 +316,12 @@ $users = User::whereNotIn('id', $friendIds)
                                         <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1" />
                                     </svg>
                                 </p>
-                                <button type="button" class="py-3 px-5 rounded-lg shadow-sm bg-indigo-500 text-white hover:text-gray-100 hover:bg-orange-600" data-bs-toggle="modal" data-bs-target="#modalLogin">
-                                    <a href="#">Login</a>
+                                <button type="button" class="py-3 px-5 rounded-lg shadow-sm bg-orange-600 text-white hover:text-gray-100 hover:bg-orange-500" data-bs-toggle="modal" data-bs-target="#modalLogin">
+                                    <a href="#" class="hover:text-white">Login</a>
                                 </button>
                                 <p>or</p>
-                                <button type="button" class="py-3 px-5 rounded-lg shadow-sm bg-indigo-500 text-white hover:text-gray-100 hover:bg-orange-600" data-bs-toggle="modal" data-bs-target="#modalRegister">
-                                    <a href="#">Register</a>
+                                <button type="button" class="py-3 px-5 rounded-lg shadow-sm bg-orange-600 text-white hover:text-gray-100 hover:bg-orange-500" data-bs-toggle="modal" data-bs-target="#modalRegister">
+                                    <a href="#" class="text-white">Register</a>
                                     <button>
                             </div>
                         </div>
@@ -338,7 +349,7 @@ $users = User::whereNotIn('id', $friendIds)
 
                 <div class="mt-6">
                     <p class="fw-bold text-white fs-3">Your Friends</p>
-                    <ul class="bgtrans divide-y divide-gray-200 rounded-lg shadow-sm">
+                    <ul class="bg-orange-400 divide-y divide-gray-200 rounded-lg shadow-sm">
                         @if($users2->count()>0)
                         @foreach($users2 as $user)
                         <div class="mt-2">
@@ -368,7 +379,7 @@ $users = User::whereNotIn('id', $friendIds)
                 </div>
                 <div class="mt-6">
                     <p class="fw-bold text-white fs-3">You might know</p>
-                    <ul class="bgtrans divide-y divide-gray-200 rounded-lg shadow-sm">
+                    <ul class="bg-orange-400 divide-y divide-gray-200 rounded-lg shadow-sm">
                         @foreach($users as $user)
                         @include('components.usercard')
                         @endforeach
@@ -376,10 +387,10 @@ $users = User::whereNotIn('id', $friendIds)
                 </div>
 
                 @else
-                <div class="bgtrans rounded-lg shadow-sm p-3">
+                <div class="bgtrans rounded-lg shadow-sm p-3 text-white">
                     <div class="flex flex-column justify-center align-items-center mx-auto">
                         <a href="https://www.linkedin.com/in/trixiamarielorenzana" target="_blank">
-                            <img src="/images/trixiadeveloper.png" style="height:5rem;" alt="Logo" class="rounded-full"> </a>
+                            <img src="/images/trixiadeveloper.png" style="height:5rem;" alt="Logo" class="rounded-full border border-2 border-white"> </a>
                         <p class="fs-1 bold">Hello there!</p>
                     </div>
 
@@ -389,9 +400,10 @@ $users = User::whereNotIn('id', $friendIds)
                     <p>
                         I'm not only your average developer. I'm a dreamer, a creator, and a problem solver. My passion lies in blending creativity with technology. Whether I'm crafting a sleek website, cooking up a robust web application, or experimenting with the latest tech trends, I pour my heart and soul into every project, infusing it with a unique blend of innovation and imagination.
                     </p>
-                    
+
                 </div>
                 @endauth
+                
             </div>
         </div>
 

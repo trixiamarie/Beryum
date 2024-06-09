@@ -1,5 +1,5 @@
 <a href="{{route('recipe.show', ['recipe' => $recipe->id])}}"><div class="bg-white shadow-lg rounded-lg overflow-hidden mb-3">
-    <img src="{{ $recipe->image_url }}" alt="Immagine della ricetta" class="w-full h-56 object-cover object-center">
+    <img src="{{ asset($recipe->image_url) }}" alt="Immagine della ricetta" class="object-cover object-center">
     
     <div class="p-4">
         <h3 class="text-lg font-bold">{{ $recipe->title }}</h3>

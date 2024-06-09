@@ -153,7 +153,7 @@ $exists = FriendRequest::where(function ($query) use ($userId1, $userId2) {
                 @include('components.newpost')
                 @endif
                 @if(empty($posts) || $posts->isEmpty())
-                <p>No posts available</p>
+                <p class="p-3 bgtrans text-white rounded-lg shadow-md">No posts available</p>
                 @else
                 @foreach ($posts as $post)
                 @include('components.post', ['posts' => $post])

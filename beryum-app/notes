@@ -1,1 +1,12 @@
 #ea7b0c9c
+
+composer update
+composer install
+npm install
+cp .env.example .env
+php artisan key:generate
+file env-> cambia nome database
+php artisan migrate
+php artisan db:seed
+npm run dev
+php artisan serve

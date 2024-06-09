@@ -20,7 +20,7 @@
                                 </div>
 
                                 <div class="flex justify-end">
-                                    <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500">
+                                    <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-orange-950 bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500">
                                         Save
                                     </button>
                                 </div>
@@ -57,7 +57,7 @@
     </div>
 </div>
 
-<div class="flex justify-between p-2 my-2 bgtrans2 text-white shadow-sm rounded-lg">
+<div class="flex justify-between p-2 my-2 bg-orange-200 text-orange-950 shadow-sm rounded-lg">
 
     <div class="flex" >
         <a href="{{route('user.show', ['user' => $comment->user->id])}}">
@@ -65,8 +65,8 @@
         </a>
         <div>
         <div>
-            <a class="hover:text-orange-200" href="{{route('user.show', ['user' => $comment->user->id])}}">
-                <p class="font-semibold">{{ $comment->user->name }} {{ $comment->user->lastname }} <span class="text-gray-100 text-sm">(&#64;{{ $comment->user->username }})</span></p>
+            <a class="hover:text-orange-800" href="{{route('user.show', ['user' => $comment->user->id])}}">
+                <p class="font-semibold">{{ $comment->user->name }} {{ $comment->user->lastname }} <span class="text-orange-950 text-sm">(&#64;{{ $comment->user->username }})</span></p>
             </a>
         </div>
         <p class="my-2">{{ $comment->comment }}.</p>
@@ -74,7 +74,7 @@
     </div>
 
     <div class="dropdown">
-            <button class="dropdown-toggle text-white" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="dropdown-toggle text-orange-950" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
                     <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
                 </svg>
