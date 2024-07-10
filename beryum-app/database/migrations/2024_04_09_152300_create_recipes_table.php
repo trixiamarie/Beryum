@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('description');
             $table->text('instructions');
+            $table->text('instructions');//Da aggiungere tipo di ricetta
             $table->string('image_url')->nullable();
             $table->timestamps();
         });

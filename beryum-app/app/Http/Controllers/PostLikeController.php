@@ -38,16 +38,16 @@ class PostLikeController extends Controller
     
         $existingLike = PostLike::where('post_id', $postId)->where('user_id', $userId)->first();
     
-        if ($existingLike) {
-            return response()->json(['message' => 'You already liked this post'], 409);
-        }
+        //if ($existingLike) {
+           // return response()->json(['message' => 'You already liked this post'], 409);
+        //}
     
         $postLike = new PostLike();
         $postLike->post_id = $postId;
         $postLike->user_id = $userId;
         $postLike->save();
     
-        return response()->json(['message' => 'Post liked successfully'], 201);
+        //return response()->json(['message' => 'Post liked successfully'], 201);
     }
 
     /**

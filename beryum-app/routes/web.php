@@ -13,6 +13,7 @@ use App\Http\Controllers\RecipeController;
 use App\Http\Controllers\RecipeIngredientController;
 use App\Http\Controllers\RecipeVoteController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\ThemeController;
 use App\Http\Controllers\UserController;
 use App\Models\Post;
@@ -55,6 +56,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('postlike', PostLikeController::class);
     Route::resource('postcomment', PostCommentController::class);
     Route::resource('theme', ThemeController::class);
+    Route::get('/search', [SearchController::class, 'searchResults'])->name('search');
 
     //rotta per la paginazione in dashboard
     // Route::get('/posts/paginate', 'PostController@paginate')->name('posts.paginate');

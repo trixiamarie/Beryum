@@ -1,3 +1,150 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Stile per la scrollbar di base */
+::-webkit-scrollbar {
+    width: 12px;
+    /* Larghezza della barra di scorrimento */
+}
+
+/* Maniglia della scrollbar */
+::-webkit-scrollbar-thumb {
+    background-color: #c44c0b;
+    /* Colore della maniglia */
+    border-radius: 6px;
+    /* Bordi arrotondati della maniglia */
+    border: 3px solid transparent;
+    /* Distanza tra la maniglia e la traccia */
+    background-clip: padding-box;
+}
+
+/* Traccia della scrollbar */
+::-webkit-scrollbar-track {
+    background: #f9fafb00;
+    /* Colore dello sfondo della traccia */
+    border-radius: 6px;
+    /* Bordi arrotondati della traccia */
+}
+
+
+.sidebar {
+    position: fixed;
+
+    left: 0;
+
+    top: 0;
+
+    width: 29rem;
+
+    height: 100vh;
+
+    overflow-y: auto;
+
+    z-index: 1000;
+    background: rgb(234, 88, 12);
+    background: -moz-linear-gradient(183deg, rgba(234, 88, 12, 1) 26%, rgba(234, 123, 12, 1) 58%);
+    background: -webkit-linear-gradient(183deg, rgba(234, 88, 12, 1) 26%, rgba(234, 123, 12, 1) 58%);
+    background: linear-gradient(183deg, rgba(234, 88, 12, 1) 26%, rgba(234, 123, 12, 1) 58%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ea580c", endColorstr="#ea7b0c", GradientType=1);
+}
+
+.sidebar::-webkit-scrollbar {
+    visibility: hidden;
+}
+
+.sidebar:hover ::-webkit-scrollbar-thumb {
+    visibility: visible;
+}
+
+
+
+.sidebar2 {
+    width: 29rem;
+
+    height: 100vh;
+
+    overflow-y: auto;
+
+    z-index: 1000;
+    background: rgb(234, 88, 12);
+    background: -moz-linear-gradient(183deg, rgba(234, 88, 12, 1) 26%, rgba(234, 123, 12, 1) 58%);
+    background: -webkit-linear-gradient(183deg, rgba(234, 88, 12, 1) 26%, rgba(234, 123, 12, 1) 58%);
+    background: linear-gradient(183deg, rgba(234, 88, 12, 1) 26%, rgba(234, 123, 12, 1) 58%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ea580c", endColorstr="#ea7b0c", GradientType=1);
+}
+
+.content {
+    height: 100%;
+
+}
+
+.bgtrans {
+    background-color: #ea7b0c9c;
+
+}
+
+.bgtrans2 {
+    background-color: #EA580C;
+}
+
+body {
+    margin-left: 452px;
+    margin-right: 452px;
+   
+    /*background-color: #EA580C;*/
+     background-color: #ffd2ad; 
+
+}
+
+
+
+
+a:hover {
+    color: #312E81;
+}
+
+.navbarcustom {
+    display: none;
+}
+
+@media (max-width: 1400px) {
+
+    .sidebar,
+    .sidebar2 {
+        display: none;
+    }
+
+    body {
+        margin: auto;
+        margin-top: 4rem;
+    }
+
+    .navbarcustom {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4rem;
+        background-color: #333;
+        color: white;
+        z-index: 1001;
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.animated-arrow {
+    animation: bounce 1s infinite;
+}
