@@ -30,6 +30,8 @@ class PostCommentController extends Controller
      */
     public function store(Request $request, PostComment $postComment)
     {
+
+        $postId = $request->post_id;
         $request->validate([
             'comment' => 'required|string',
             'post_id' => 'required'
@@ -39,7 +41,7 @@ class PostCommentController extends Controller
         $comment->user_id = auth()->id(); 
         $comment->save();
 
-        return redirect()->back();
+        return redirect()->route('post.show', ['post' => $postId]);
 
     }
 

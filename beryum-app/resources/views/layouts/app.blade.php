@@ -109,7 +109,7 @@ $colors = Theme::all();
                 </div>
                 <div class="mt-6">
                     <p class="fw-bold text-white fs-3">You might know</p>
-                    <ul class="bg-orange-400 divide-y divide-gray-200 rounded-lg shadow-sm">
+                    <ul class="bg-orange-400 divide-y divide-gray-200 rounded-lg shadow-sm py-1 px-3">
                         @foreach($users as $user)
                         @include('components.usercard')
                         @endforeach
